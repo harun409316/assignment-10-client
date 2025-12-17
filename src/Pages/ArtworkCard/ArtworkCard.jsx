@@ -36,8 +36,6 @@ const ArtworkCard = ({ artwork }) => {
                       className="btn btn-sm text-xl text-black font-semibold btn-accent py-5 w-full">View Details</Link>
                 </div>
             </div>
-            
-
         </div>
     );
 };
