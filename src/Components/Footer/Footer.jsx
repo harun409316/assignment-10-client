@@ -5,7 +5,7 @@ const Footer = () => {
  
    return (
      <>
-       <footer className="footer sm:footer-horizontal bg-base-300 text-base-content p-10">
+       <footer className="footer sm:footer-horizontal mt-10 bg-base-300 text-base-content p-10">
  <div>
     <h2 className='text-4xl '>ARTIFY</h2>
  </div>

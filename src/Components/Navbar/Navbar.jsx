@@ -45,15 +45,39 @@ const Navbar = () => {
         {links}
     </ul>
   </div>
-  <div className="navbar-end">
- {
-    user ? (<button onClick={handleLogout} className="btn btn-primary">Logout</button>) :(
-<Link to='/login' className="btn btn-primary">Login</Link>
-    ) 
- }
+ <div className="navbar-end">
+  {
+    user ? (
+      <div className="dropdown dropdown-end">
+        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+          <div className="w-10 rounded-full">
+            <img
+              src={user.photoURL || "https://i.ibb.co/2kR5zq0/user.png"}
+              alt="User"
+            />
+          </div>
+        </div>
 
-    
-  </div>
+        <ul
+          tabIndex={0}
+          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+        >
+          <li className="justify-center text-center font-semibold">
+            {user.displayName || "User"}
+          </li>
+          <li>
+            <button onClick={handleLogout} className="btn btn-sm btn-error mt-2">
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    ) : (
+      <Link to="/login" className="btn btn-primary">Login</Link>
+    )
+  }
+</div>
+
 </div>
     );
 };
