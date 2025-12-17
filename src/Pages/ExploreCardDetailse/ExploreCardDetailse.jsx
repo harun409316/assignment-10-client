@@ -80,13 +80,8 @@ const ExploreCardDetailse = () => {
         />
 
         <div className="ml-10">
-          {/* Title */}
-          <h1 className="text-5xl font-bold">{artwork?.title}</h1>
-
-          {/* Artist Block */}
-          <div className="py-4">
-            <h2 className="text-3xl font-semibold">{artwork.artistName}</h2>
-
+          
+         
             {/* Artist Photo */}
             {artwork.artistPhoto && (
               <img
@@ -96,32 +91,41 @@ const ExploreCardDetailse = () => {
               />
             )}
 
+             {/* Artist Block */}
+          <div className="py-4">
+            <h2 className="text-3xl font-semibold">{artwork.artistName}</h2>
+
+
             <p className="text-md mt-2">Total Artworks: {artistArtCount}</p>
+          {/* Title */}
+          <h1 className="text-5xl font-semibold">{artwork?.title}</h1>
+
           </div>
 
           {/* Artwork categories, medium, price */}
-          <p className="text-xl">Category: {artwork?.category}</p>
-          <p className="text-xl">Medium / Tools: {artwork?.medium || "N/A"}</p>
-          <p className="text-xl">
-            Dimensions: {artwork?.dimensions || "Not provided"}
+          <p className="text-xl mb-2"><span className=" text-2xl">Category :</span> {artwork?.category}</p>
+          <p className="text-xl mb-2"><span className=" text-2xl">Medium :</span> {artwork?.medium || "N/A"}</p>
+          <p className="text-xl mb-2">
+            <span className=" text-2xl">Dimensions :</span> {artwork?.dimensions || "Not provided"}
           </p>
-          <p className="text-xl">
+          <p className="text-xl font-semibold">
             Price: {artwork?.price ? `$${artwork.price}` : "Not available"}
           </p>
 
           {/* Description */}
-          <p className="py-6">{artwork?.description}</p>
+          <p className="py-6  text-gray-500">{artwork?.description}</p>
 
-          {/* Like Button */}
+         
+
+          {/* Add to Favorites */}
+          <div className="flex  h-full gap-5 justify-end items-end mt-5">
+            {/* Like Button */}
           <button onClick={handleLike} className="btn btn-primary">
             ❤️ Like ({likeCount})
           </button>
-
-          {/* Add to Favorites */}
-          <div className="flex flex-col h-full justify-end items-end mt-5">
             <button
               onClick={handleAddToFavorites}
-              className="btn btn-primary"
+              className="btn btn-secondary"
             >
               Add to Favorites
             </button>

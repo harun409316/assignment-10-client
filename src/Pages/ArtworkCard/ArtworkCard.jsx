@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const ArtworkCard = ({ artwork }) => {
-    const { image, title, artistName, category, _id } = artwork;
+    const { image, title, artistName,price, category, _id } = artwork;
 
     return (
         <div className="card bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 rounded-xl">
@@ -23,11 +23,17 @@ const ArtworkCard = ({ artwork }) => {
                 <div className='flex justify-between text-sm text-gray-600 mt-2'>
                     <p>{artistName}</p>
                     <p className="font-medium">Category: {category}</p>
+                   
                 </div>
 
                 <div className="flex  justify-between items-center ">
                   <p>Like:0 </p>
-                    <Link to={`/explore-details/${_id}`} className="btn btn-sm btn-primary">View Details</Link>
+                   <p className="font-medium">Price: {price} $</p>
+                  
+                </div>
+                <div>
+                      <Link to={`/explore-details/${_id}`} 
+                      className="btn btn-sm text-xl text-black font-semibold btn-accent py-5 w-full">View Details</Link>
                 </div>
             </div>
             

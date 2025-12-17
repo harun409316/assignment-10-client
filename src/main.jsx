@@ -30,12 +30,13 @@ const router = createBrowserRouter([
     children:[
       {
         index:true,
-        element:<Home/>
+        element:<Home/>,
+        loader: ()=> fetch('http://localhost:5000/latest-artworks')
       },
       {
         path:'explore-artworks',
         Component: ExploreArtworks,
-        loader: ()=> fetch('http://localhost:5000/artwork')
+       
         
 
       },

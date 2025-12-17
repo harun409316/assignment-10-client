@@ -6,13 +6,14 @@ import { useNavigate } from 'react-router';
 const AddArtworks = () => {
     const {user} = use(AuthContext);
       const navigate = useNavigate();
+console.log("Photo URL:", user?.photoURL);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         // Handle form submission logic here
         const formdata = {
             artistName: user?.displayName,
-            artistPhoto: user?.displayPhoto,
+           artistPhoto: user?.photoURL,
             email: user?.email,
             title: e.target.title.value,
             image: e.target.image.value, 
@@ -54,18 +55,46 @@ const AddArtworks = () => {
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <form onSubmit={handleSubmit} className="card-body">
          <h1 className="text-3xl text-center font-bold">Add New Artwork</h1>
+      
+        {user?.photoURL && (
+  <div className="flex justify-center mb-4">
+    <img
+      src={user.photoURL}
+      alt="User"
+      className="w-24 h-24 rounded-full border"
+    />
+  </div>
+)}
+
+
+
+
         <fieldset className="fieldset">
           <label className="label">User Name</label>
-          <input type="text" name='artistName' className="input" readOnly placeholder="Name" />
-         
+          <input
+  type="text"
+  name="artistName"
+  className="input"
+  value={user?.displayName || ""}
+  readOnly
+/>
+      
           <label className="label">User Email</label>
-          <input type="Email" name='email' className="input" readOnly placeholder="Email" />
+        <input
+  type="email"
+  name="email"
+  className="input"
+  value={user?.email || ""}
+  readOnly
+/>
+
 
           <label className="label">Title</label>
           <input type="text" name='title' className="input" placeholder="Title" />
          
           <label className="label">Image URL</label>
           <input type="text" name='image' className="input" placeholder="Image Url" />       
+     
      <div>
             
           <label className="label">Visibility</label>
@@ -84,7 +113,7 @@ const AddArtworks = () => {
     <select defaultValue={""}
     name='category'
      id="category" 
-     className='select w-full  ' required>
+     className='select w-full' required>
 
       <option value="disabled">Select category</option>
       <option>3D</option>
@@ -94,7 +123,9 @@ const AddArtworks = () => {
       <option>Digital</option>
       </select>
          </div>
-         
+         <label className="label">Price</label>
+          <input type="number" name='price' className="input" placeholder="Price" />
+          
           <label className="label">Description</label>
           <input type="text" name='description' className="input" placeholder="Description" />
           

@@ -60,7 +60,7 @@ const handleUnfavorite = async (id) => {
               <p className="line-clamp-3">{item?.description}</p>
             </div>
             <button
-              className="btn btn-error mt-2"
+              className="btn btn-active btn-success mt-2"
               onClick={() => handleUnfavorite(item._id)}
             >
               Unfavoriting
