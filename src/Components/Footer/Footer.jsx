@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Footer = () => {
- 
    return (
      <>
        <footer className="footer sm:footer-horizontal mt-10 bg-base-300 text-base-content p-10">

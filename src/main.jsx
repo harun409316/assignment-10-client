@@ -36,9 +36,6 @@ const router = createBrowserRouter([
       {
         path:'explore-artworks',
         Component: ExploreArtworks,
-       
-        
-
       },
       {
         path:'add-artwork',
@@ -80,7 +77,6 @@ const router = createBrowserRouter([
   </PrivateRout>
   ),
   loader: () => fetch('http://localhost:5000/my-favorites')
-
 }
 
     ]

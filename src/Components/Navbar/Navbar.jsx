@@ -23,7 +23,6 @@ const Navbar = () => {
     <li><NavLink to='/add-artwork'>Add Artwork</NavLink></li>
      <li><NavLink to='/my-gallery'>My Gallery</NavLink></li>
     <li><NavLink to='/my-favorites'>My Favorites</NavLink></li>
-   
     </>
     return (
        <div className="navbar bg-base-100 shadow-sm">

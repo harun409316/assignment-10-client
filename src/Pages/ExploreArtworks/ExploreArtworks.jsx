@@ -5,8 +5,7 @@ import ArtworkCard from '../ArtworkCard/ArtworkCard';
 const ExploreArtworks = () => {
   const [artworks, setArtworks] = useState([]);
   const [search, setsearch] = useState('');
-  // const data = useLoaderData();
-  
+
 useEffect(() =>{
   fetch(`http://localhost:5000/artworks?search=${search}`)
   .then(res => res.json())

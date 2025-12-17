@@ -80,8 +80,7 @@ const ExploreCardDetailse = () => {
         />
 
         <div className="ml-10">
-          
-         
+
             {/* Artist Photo */}
             {artwork.artistPhoto && (
               <img
