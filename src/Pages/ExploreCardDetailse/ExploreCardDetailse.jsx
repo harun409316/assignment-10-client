@@ -10,7 +10,7 @@ const ExploreCardDetailse = () => {
   const likeCountInitial = artwork?.like || 0;
   const [likeCount, setLikeCount] = useState(likeCountInitial);
 
-  // Artist info
+  // Artist info here
   const [artistArtCount, setArtistArtCount] = useState(0);
 
   // Fetch total artworks by this artist
