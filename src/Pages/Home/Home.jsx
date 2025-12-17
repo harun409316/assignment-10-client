@@ -26,7 +26,7 @@ const Home = () => {
           className="btn btn-outline"
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
-          {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+          {theme === "light" ? " Dark" : " Light"}
         </button>
       </div>
 

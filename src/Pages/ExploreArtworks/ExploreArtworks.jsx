@@ -1,5 +1,5 @@
 import React, {  useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router';
+
 import ArtworkCard from '../ArtworkCard/ArtworkCard';
 
 const ExploreArtworks = () => {
@@ -28,6 +28,7 @@ console.log(search);
        <div className='text-2xl text-center font-bold'>Explore Artworks
       <p className='text-center mb-10'>Explore 3d Artwork.</p>
       <div className='grid grid-cols-3 lg:grid-cols-4 gap-3'>
+
         {
           artworks.map(artwork =>   <ArtworkCard key={artwork._id} artwork={artwork}></ArtworkCard>
 
