@@ -5,7 +5,14 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const Home = () => {
-  const data = useLoaderData();
+  const loadedData = useLoaderData();
+const data = Array.isArray(loadedData?.result)
+  ? loadedData.result
+  : Array.isArray(loadedData)
+  ? loadedData
+  : [];
+
+
   const { user } = useContext(AuthContext);
 
   const [theme, setTheme] = useState(
@@ -45,7 +52,11 @@ const Home = () => {
         <h2 className="text-3xl font-bold text-center mb-10">
           Community Highlights
         </h2>
-        {/* cards same as yours */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
+    {data.slice(0, 3).map(artwork => (
+      <ArtworkCard key={artwork._id} artwork={artwork} />
+    ))}
+  </div>
       </section>
 
       {/* Top Artists */}

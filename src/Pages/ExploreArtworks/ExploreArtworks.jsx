@@ -7,7 +7,7 @@ const ExploreArtworks = () => {
   const [search, setsearch] = useState('');
 
 useEffect(() =>{
-  fetch(`http://localhost:5000/artworks?search=${search}`)
+  fetch(`https://assignment-10-server-snowy-eight.vercel.app/artworks?search=${search}`)
   .then(res => res.json())
   .then(data => setArtworks(data));
 }, [search]);

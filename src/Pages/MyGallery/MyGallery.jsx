@@ -11,7 +11,7 @@ const [selectedArtwork, setSelectedArtwork] = useState(null);
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:5000/my-gallery?email=${user.email}`)
+            fetch(`https://assignment-10-server-snowy-eight.vercel.app/my-gallery?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => setMyArtworks(data));
         }
@@ -24,7 +24,7 @@ const [selectedArtwork, setSelectedArtwork] = useState(null);
 
     if (!confirmDelete) return;
 
-    fetch(`http://localhost:5000/artwork/${id}`, {
+    fetch(`https://assignment-10-server-snowy-eight.vercel.app/artwork/${id}`, {
         method: "DELETE",
     })
         .then(res => res.json())
@@ -55,7 +55,7 @@ const handleUpdateSubmit = async (e) => {
   };
 
   const res = await fetch(
-    `http://localhost:5000/artwork/${selectedArtwork._id}`,
+    `https://assignment-10-server-snowy-eight.vercel.app/artwork/${selectedArtwork._id}`,
     {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },

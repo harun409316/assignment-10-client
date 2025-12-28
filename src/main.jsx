@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         index:true,
         element:<Home/>,
-        loader: ()=> fetch('http://localhost:5000/latest-artworks')
+        loader: ()=> fetch('https://assignment-10-server-snowy-eight.vercel.app/latest-artworks')
       },
       {
         path:'explore-artworks',
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
     </PrivateRout>
   ),
   loader: ({ params }) =>
-    fetch(`http://localhost:5000/artwork/${params.id}`)
+    fetch(`https://assignment-10-server-snowy-eight.vercel.app/artwork/${params.id}`)
   
 },
 {
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
     <MyFavorties/>
   </PrivateRout>
   ),
-  loader: () => fetch('http://localhost:5000/my-favorites')
+  loader: () => fetch('https://assignment-10-server-snowy-eight.vercel.app/my-favorites')
 }
 
     ]

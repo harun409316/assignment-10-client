@@ -17,7 +17,7 @@ const ExploreCardDetailse = () => {
   useEffect(() => {
     const loadArtistArtworks = async () => {
       const res = await fetch(
-        `http://localhost:5000/artworks?artistName=${artwork.artistName}`
+        `https://assignment-10-server-snowy-eight.vercel.app/artworks?artistName=${artwork.artistName}`
       );
       const data = await res.json();
       setArtistArtCount(data?.result?.length || 0);
@@ -28,7 +28,7 @@ const ExploreCardDetailse = () => {
   // Handle Like
   const handleLike = async () => {
     const res = await fetch(
-      `http://localhost:5000/artwork/like/${artwork._id}`,
+      `https://assignment-10-server-snowy-eight.vercel.app/artwork/like/${artwork._id}`,
       {
         method: "PATCH",
       }
@@ -52,7 +52,7 @@ const ExploreCardDetailse = () => {
       userEmail: artwork.userEmail, // if available
     };
 
-    const res = await fetch("http://localhost:5000/my-favorites", {
+    const res = await fetch("https://assignment-10-server-snowy-eight.vercel.app/my-favorites", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -19,7 +19,7 @@ const MyFavorites = () => {
  
 const handleUnfavorite = async (id) => {
   try {
-    const res = await fetch(`http://localhost:5000/my-favorites/delete/${id}`, {
+    const res = await fetch(`https://assignment-10-server-snowy-eight.vercel.app/my-favorites/delete/${id}`, {
       method: 'DELETE',
     });
     const data = await res.json();

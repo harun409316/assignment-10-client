@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router';
 const AddArtworks = () => {
     const {user} = use(AuthContext);
       const navigate = useNavigate();
-console.log("Photo URL:", user?.photoURL);
+// console.log("Photo URL:", user?.photoURL);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -25,7 +25,7 @@ console.log("Photo URL:", user?.photoURL);
        
  try {
     //Add to main artwork collection
-    const res = await fetch("http://localhost:5000/artwork", {
+    const res = await fetch("https://https://assignment-10-server-snowy-eight.vercel.app/artwork", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formdata),
